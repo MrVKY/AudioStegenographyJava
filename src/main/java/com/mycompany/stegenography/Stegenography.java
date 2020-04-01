@@ -110,7 +110,7 @@ public class Stegenography {
     public static byte[] encode_text(byte[] data, byte[] addition, int offset)
 
     {
-        // check that the data + offset will fit in the image
+        // check that the data + offset will fit in the Audio
 
         if (addition.length + offset > data.length) {
             throw new IllegalArgumentException("File not long enough!");
@@ -133,7 +133,7 @@ public class Stegenography {
                 // assign the bit by taking: [(previous byte value) AND 0xfe] OR
                 // bit to add
 
-                // changes the last bit of the byte in the image to be the bit
+                // changes the last bit of the byte in the Audio to be the bit
                 // of addition
 
                 data[offset] = (byte) ((data[offset] & 0xFE) | b);
